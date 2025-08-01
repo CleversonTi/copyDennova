@@ -530,3 +530,12 @@ section {
 }
 
 /* END POSTS*/
+footer {
+  display: block;
+  float: left;
+  width: 100%;
+}
+#footer-info .spinner-border {
+  width: 1rem;
+  height: 1rem;
+}

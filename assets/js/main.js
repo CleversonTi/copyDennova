@@ -151,7 +151,32 @@ $(function () {
       initSlickIfNeeded($carousel);
     }, 100); // Aguarda aba ser exibida
   });
+  getGitHubProfile("cleversonti").then((data) => {
+    const el = document.getElementById("footer-info");
+    console.log(el);
+    if (!el) {
+      console.warn("Elemento #footer-info não encontrado.");
+      return;
+    }
+
+    el.innerHTML = "";
+
+    if (data) {
+      el.innerHTML = `
+        <small>
+          Desenvolvido por <a href="${data.html_url}" target="_blank">@${
+        data.login
+      }</a> • 
+          ${data.public_repos} repositórios públicos • 
+          Desde ${new Date(data.created_at).getFullYear()}
+        </small>
+      `;
+    } else {
+      el.innerText = "Desenvolvedor: cleversonti";
+    }
+  });
 });
+
 $(window).on("scroll", function () {
   const $header = $(".header");
   const $main = $(".main-content");
