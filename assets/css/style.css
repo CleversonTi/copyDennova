@@ -14,6 +14,15 @@ ol {
   background: #fff;
   border-bottom: 1px solid #ddd;
 }
+.header .header-logo {
+  column-gap: 10px;
+}
+.header .header-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
 
 .header-logo img {
   height: 40px;
@@ -154,9 +163,6 @@ ol {
 
   font-size: 14px;
   font-weight: 600;
-}
-
-.sidebar a {
 }
 
 .sidebar .submenu {
