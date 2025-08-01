@@ -260,7 +260,7 @@ section {
 }
 
 /* tab-pane */
-.treinamento .tab-pane .carousel-treinamentos .slick-list .slick-track {
+.slick-initialized .slick-list .slick-track {
   display: flex;
   gap: 15px;
 }
@@ -349,3 +349,34 @@ section {
     font-size: 0.9rem;
   }
 }
+
+/* POSTS*/
+#posts .carousel-posts {
+  width: 100%;
+}
+#posts .carousel-posts {
+  width: 100%;
+}
+.post-card {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-tag {
+  font-size: 0.8rem;
+}
+
+/* END POSTS*/
