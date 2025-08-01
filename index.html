@@ -1,152 +1,559 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dennova Clone</title>
-  <!-- CSS -->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .sidebar {
-      width: 250px;
-      height: 100vh;
-      position: fixed;
-      left: 0;
-      top: 0;
-      background: #00c18c;
-      color: white;
-      overflow-y: auto;
-      padding: 1rem;
-      z-index: 1000;
-      transition: left 0.3s;
-    }
-    .sidebar a {
-      color: white;
-      display: block;
-      padding: 10px;
-    }
-    .main-content {
-      margin-left: 250px;
-      padding: 1rem;
-    }
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: white;
-      border-top: 1px solid #ddd;
-    }
-    .bottom-nav i {
-      font-size: 20px;
-    }
-    .profile-img {
-      width: 40px;
-      border-radius: 50%;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dennova Clone</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <button class="btn btn-sm text-white" id="closeSidebar"><i class="fas fa-times"></i></button>
-    <h5 class="mt-4">Menu</h5>
-    <a href="#">Home</a>
-    <a href="#">Posts</a>
-    <a href="#">Vídeos</a>
-    <a href="#">Catálogo de produtos</a>
-    <a href="#pedidosSub" data-toggle="collapse">Pedidos de produtos</a>
-    <div class="collapse" id="pedidosSub">
-      <a href="#">Produtos</a>
-      <a href="#">Carrinho</a>
-      <a href="#">Meus pedidos</a>
-    </div>
-    <a href="#">Calendário</a>
-    <a href="#marketingSub" data-toggle="collapse">Marketing</a>
-    <div class="collapse" id="marketingSub">
-      <a href="#">Solicitar arte</a>
-      <a href="#">Materiais</a>
-      <a href="#">Customizados</a>
-    </div>
-    <a href="#">Financeiro</a>
-    <a href="#">SAF</a>
-  </div>
-
-  <!-- Main content -->
-  <div class="main-content">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2>Dennova</h2>
-      <img src="https://randomuser.me/api/portraits/women/1.jpg" class="profile-img" alt="Perfil">
-    </div>
-
-    <input type="text" class="form-control mb-4" placeholder="Buscar...">
-
-    <h5>Treinamentos Online</h5>
-    <div class="btn-group mb-3">
-      <button class="btn btn-outline-secondary btn-sm">Todos</button>
-      <button class="btn btn-success btn-sm">Fácil</button>
-      <button class="btn btn-outline-secondary btn-sm">Médio</button>
-      <button class="btn btn-outline-secondary btn-sm">Intermediário</button>
-    </div>
-
-    <div class="row">
-      <div class="col-6 mb-3">
-        <div class="card">
-          <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="...">
-          <div class="card-body p-2">
-            <small class="text-success">Nível fácil</small>
-            <p class="card-text mb-0">Novas unidades</p>
-          </div>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style></style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-logo">
+        <img src="assets/svg/dennova.svg" alt="Logo" />
+        <div class="header-profile">
+          <div class="header-name">Nome da Franquia</div>
+          <img
+            src="https://randomuser.me/api/portraits/women/1.jpg"
+            alt="Perfil"
+          />
         </div>
       </div>
-      <div class="col-6 mb-3">
-        <div class="card">
-          <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="...">
-          <div class="card-body p-2">
-            <small class="text-success">Nível fácil</small>
-            <p class="card-text mb-0">Unidade avançada</p>
+
+      <div class="nav-container">
+        <nav class="sidebar p-3" aria-label="Menu lateral">
+          <ul class="list-unstyled">
+            <li class="level1 home">
+              <a href="#home" title="Ir para a Home" alt="Home">Home</a>
+            </li>
+            <li class="level1">
+              <a href="#posts" title="Ver todos os posts" alt="Posts">Posts</a>
+            </li>
+            <li class="level1">
+              <a href="#videos" title="Assistir vídeos" alt="Vídeos">Vídeos</a>
+            </li>
+            <li class="level1">
+              <a
+                href="#catalogo"
+                title="Ver catálogo de produtos"
+                alt="Catálogo de produtos"
+                >Catálogo de produtos</a
+              >
+            </li>
+
+            <li class="level1 parent">
+              <span
+                class="font-weight-bold"
+                aria-label="Seção: Pedidos de produtos"
+              >
+                Pedidos de produtos
+              </span>
+              <ul class="pl-3 subCat">
+                <li>
+                  <a href="#produtos" title="Ver produtos" alt="Produtos"
+                    >Produtos</a
+                  >
+                </li>
+                <li>
+                  <a href="#carrinho" title="Ver carrinho" alt="Carrinho"
+                    >Carrinho</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#meus-pedidos"
+                    title="Acompanhar meus pedidos"
+                    alt="Meus pedidos"
+                    >Meus pedidos</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="level1">
+              <a href="#comunicados" title="Ver comunicados" alt="Comunicados"
+                >Comunicados</a
+              >
+            </li>
+            <li class="level1">
+              <a href="#calendario" title="Ver calendário" alt="Calendário"
+                >Calendário</a
+              >
+            </li>
+
+            <li class="level1 parent">
+              <span class="font-weight-bold" aria-label="Seção: Marketing"
+                >Marketing
+              </span>
+
+              <ul class="pl-3 subCat">
+                <li>
+                  <a
+                    href="#solicitar-arte"
+                    title="Solicitar arte"
+                    alt="Solicitar arte"
+                    >Solicitar arte</a
+                  >
+                </li>
+                <li>
+                  <a href="#materiais" title="Ver materiais" alt="Materiais"
+                    >Materiais</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#materiais-customizados"
+                    title="Ver materiais customizados"
+                    alt="Materiais customizados"
+                    >Materiais customizados</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#meus-pedidos-mkt"
+                    title="Acompanhar pedidos de marketing"
+                    alt="Meus pedidos"
+                    >Meus pedidos</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="level1">
+              <a
+                href="#documentos"
+                title="Ver documentos e arquivos"
+                alt="Documentos e arquivos"
+                >Documentos e arquivos</a
+              >
+            </li>
+            <li class="level1">
+              <a
+                href="#visual-merchandising"
+                title="Ver visual merchandising"
+                alt="Visual merchandising"
+                >Visual merchandising</a
+              >
+            </li>
+
+            <li class="level1 parent">
+              <span
+                class="font-weight-bold"
+                aria-label="Seção: Pedidos para fornecedores"
+                >Pedidos para fornecedores
+              </span>
+
+              <ul class="pl-3 subCat">
+                <li>
+                  <a
+                    href="#fornecedores-produtos"
+                    title="Ver produtos de fornecedores"
+                    alt="Produtos"
+                    >Produtos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#fornecedores-carrinho"
+                    title="Ver carrinho de fornecedores"
+                    alt="Carrinho"
+                    >Carrinho</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#fornecedores-pedidos"
+                    title="Meus pedidos de fornecedores"
+                    alt="Meus pedidos"
+                    >Meus pedidos</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="level1 parent">
+              <span class="font-weight-bold" aria-label="Seção: Treinamentos"
+                >Treinamentos
+              </span>
+
+              <ul class="pl-3 subCat">
+                <li>
+                  <a
+                    href="#todos-treinamentos"
+                    title="Ver todos os treinamentos"
+                    alt="Todos os treinamentos"
+                    >Todos os treinamentos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#trilhas"
+                    title="Ver trilhas de aprendizagem"
+                    alt="Trilhas"
+                    >Trilhas</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#meus-treinamentos"
+                    title="Meus treinamentos"
+                    alt="Meus treinamentos"
+                    >Meus treinamentos</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="level1">
+              <a href="#relatorios" title="Ver relatórios" alt="Relatórios"
+                >Relatórios</a
+              >
+            </li>
+
+            <li class="level1 parent">
+              <span class="font-weight-bold" aria-label="Seção: Financeiro"
+                >Financeiro
+              </span>
+
+              <ul class="pl-3 subCat">
+                <li>
+                  <a href="#boletos" title="Ver boletos" alt="Boletos"
+                    >Boletos</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="level1 home">
+              <a href="#saf" title="Acessar SAF" alt="SAF"
+                ><strong>SAF</strong></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+        class="banner_topo"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="assets/img/banners/banner.png"
+              alt="Primeiro Slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="assets/img/banners/banner.png"
+              alt="Segundo Slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="assets/img/banners/banner.png"
+              alt="Terceiro Slide"
+            />
           </div>
         </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
       </div>
+
+      <!-- START SECTION treinamento  -->
+      <section class="treinamento my-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="font-weight-bold">Treinamentos Online</h2>
+          <a href="#" class="text-primary font-weight-bold"
+            >VER MAIS <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+
+        <ul class="nav nav-tabs mb-4" id="tabTreinamentos" role="tablist">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              id="todos-tab"
+              data-toggle="tab"
+              href="#todos"
+              role="tab"
+              >Todos</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="facil-tab"
+              data-toggle="tab"
+              href="#facil"
+              role="tab"
+              >Fácil</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="medio-tab"
+              data-toggle="tab"
+              href="#medio"
+              role="tab"
+              >Médio</a
+            >
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="todos" role="tabpanel">
+            <div id="carouselTodos" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 1"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível fácil</div>
+                          <h5>Novas unidades</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 2"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível médio</div>
+                          <h5>Como vender mais</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 3"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível avançado</div>
+                          <h5>Gestão estratégica</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Adicione mais .carousel-item conforme necessário -->
+              </div>
+              <a
+                class="carousel-control-prev"
+                href="#carouselTodos"
+                role="button"
+                data-slide="prev"
+              >
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselTodos"
+                role="button"
+                data-slide="next"
+              >
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+          <div class="tab-pane fade show active" id="facil" role="tabpanel">
+            <div id="carouselFacil" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 1"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível fácil</div>
+                          <h5>Novas unidades</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 2"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível médio</div>
+                          <h5>Como vender mais</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 3"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível avançado</div>
+                          <h5>Gestão estratégica</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Adicione mais .carousel-item conforme necessário -->
+              </div>
+              <a
+                class="carousel-control-prev"
+                href="#carouselTodos"
+                role="button"
+                data-slide="prev"
+              >
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselTodos"
+                role="button"
+                data-slide="next"
+              >
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+          <div class="tab-pane fade show active" id="medio" role="tabpanel">
+            <div id="carouselMedio" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 1"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível fácil</div>
+                          <h5>Novas unidades</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 2"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível médio</div>
+                          <h5>Como vender mais</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 3"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível avançado</div>
+                          <h5>Gestão estratégica</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card card-training">
+                        <img
+                          src="assets/img/treinamento/treinamento.jpg"
+                          alt="Treinamento 3"
+                        />
+                        <div class="card-body">
+                          <div class="nivel">Nível avançado</div>
+                          <h5>Gestão estratégica</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Adicione mais .carousel-item conforme necessário -->
+              </div>
+              <a
+                class="carousel-control-prev"
+                href="#carouselTodos"
+                role="button"
+                data-slide="prev"
+              >
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselTodos"
+                role="button"
+                data-slide="next"
+              >
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- END SECTION treinamento  -->
     </div>
 
-    <h5 class="mt-4">Posts</h5>
-    <div class="row">
-      <div class="col-6 mb-3">
-        <div class="card">
-          <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="...">
-          <div class="card-body p-2">
-            <p class="card-text mb-0">Tendências de beleza 2024</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 mb-3">
-        <div class="card">
-          <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="...">
-          <div class="card-body p-2">
-            <p class="card-text mb-0">Novidades para franquias</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom Navbar -->
-  <div class="bottom-nav d-flex justify-content-around py-2">
-    <a href="#"><i class="fas fa-home"></i></a>
-    <a href="#"><i class="fas fa-th"></i></a>
-    <a href="#"><i class="fas fa-user"></i></a>
-    <a href="#"><i class="fas fa-bell"></i></a>
-    <a href="#"><i class="fas fa-search"></i></a>
-  </div>
-
-  <!-- Scripts -->
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
-</body>
+  </body>
 </html>
