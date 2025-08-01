@@ -21,6 +21,42 @@ $(function () {
       $sidebar.prepend($closeBtn);
     }
   }
+
+  const $searchHTML = $(`
+  <div class="search-wrapper w-100 d-block d-md-none my-3 px-3">
+    <div class="input-group rounded-pill bg-white shadow-sm">
+      <span class="input-group-text border-0 bg-transparent">
+        <i class="fas fa-search text-muted"></i>
+      </span>
+      <input
+        type="text"
+        class="form-control border-0 bg-transparent"
+        placeholder="Buscar"
+        aria-label="Buscar"
+        id="searchInput"
+      />
+    </div>
+  </div>
+`);
+
+  const isDesktop = $(window).width() >= 768;
+
+  if (isDesktop) {
+    const $logo = $(".logo-wrapper");
+    const $profile = $(".header-profile");
+
+    if ($logo.length && $profile.length) {
+      $searchHTML.addClass("d-none d-md-block mx-3"); // visível só no desktop
+      $searchHTML.insertAfter($logo);
+    }
+  } else {
+    const $header = $(".header");
+    if ($header.length) {
+      $searchHTML.addClass("d-block d-md-none"); // visível só no mobile
+      $searchHTML.insertAfter($header);
+    }
+  }
+
   // Toggle submenu da sidebar
   $(".sidebar .font-weight-bold").on("click", function () {
     const $clicked = $(this);
@@ -132,4 +168,20 @@ $(window).on("scroll", function () {
     $header.removeClass("fixed-header");
     $main.css("margin-top", "0");
   }
+});
+
+$(document).on("input", "#searchInput", function () {
+  const search = $(this).val().toLowerCase().trim();
+
+  // Filtra cards de treinamento
+  $(".card-training").each(function () {
+    const title = $(this).find("h5").text().toLowerCase();
+    $(this).toggle(title.includes(search));
+  });
+
+  // Filtra posts
+  $(".post-card").each(function () {
+    const title = $(this).find(".card-title").text().toLowerCase();
+    $(this).toggle(title.includes(search));
+  });
 });

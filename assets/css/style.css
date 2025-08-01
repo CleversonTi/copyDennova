@@ -54,6 +54,29 @@ ol {
   border-radius: 50%;
   margin-left: auto;
 }
+.search-wrapper {
+  flex: 1;
+  max-width: 320px;
+}
+@media (max-width: 768px) {
+  .search-wrapper {
+    max-width: unset;
+    width: 100%;
+  }
+}
+.search-wrapper input:focus {
+  box-shadow: none !important;
+}
+.search-wrapper input {
+  border-radius: 2rem;
+  padding-left: 2.5rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.search-wrapper {
+  position: relative;
+}
+
 .nav-container {
   width: 100%;
 }
@@ -318,6 +341,7 @@ section {
   display: flex;
   gap: 15px;
 }
+
 .treinamento .tab-pane .carousel-treinamentos .slick-arrow {
   z-index: 10;
 }
@@ -372,7 +396,7 @@ section {
   width: 3rem;
   height: 3rem;
   top: 40%;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(0, 235, 216, 0.85);
   border-radius: 50%;
   color: #333;
   transition: background 0.3s;
@@ -470,6 +494,9 @@ section {
 
   .nav-tabs .nav-link {
     font-size: 0.9rem;
+  }
+  .slick-initialized .slick-list {
+    padding-right: 80px;
   }
 }
 
