@@ -218,7 +218,7 @@ section {
 } /* Container do treinamento */
 .treinamento {
   padding: 2rem 1rem;
-  background-color: #f8f9fa;
+  background-color: #f0f0f0;
 }
 
 /* Título e link */
@@ -239,6 +239,10 @@ section {
 }
 
 /* Tabs */
+
+.treinamento .nav-tabs {
+  column-gap: 10px;
+}
 .nav-tabs .nav-link {
   border: none;
   border-bottom: 3px solid transparent;
@@ -246,11 +250,28 @@ section {
   color: #6c757d;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
+  background-color: #e8f1ff;
+  border-radius: 20px;
 }
 
 .nav-tabs .nav-link.active {
-  color: #0d6efd;
-  border-bottom-color: #0d6efd;
+  color: #fff;
+  background-color: #167f71;
+}
+
+/* tab-pane */
+.treinamento .tab-pane .carousel-treinamentos .slick-list .slick-track {
+  display: flex;
+  gap: 15px;
+}
+.treinamento .tab-pane .carousel-treinamentos .slick-arrow {
+  z-index: 10;
+}
+.treinamento .tab-pane .carousel-treinamentos .slick-prev {
+  left: 15px;
+}
+.treinamento .tab-pane .carousel-treinamentos .slick-next {
+  right: 15px;
 }
 
 /* Cards */
