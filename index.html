@@ -6,6 +6,8 @@
     <title>Dennova Clone</title>
     <!-- CSS -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/slick/css/slick.css" />
+    <link rel="stylesheet" href="vendor/slick/css/slick-theme.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -243,73 +245,75 @@
 
     <!-- Main content -->
     <div class="main-content">
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-ride="carousel"
-        class="banner_topo"
-      >
-        <ol class="carousel-indicators">
-          <li
-            data-target="#carouselExampleIndicators"
-            data-slide-to="0"
-            class="active"
-          ></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              class="d-block w-100"
-              src="assets/img/banners/banner.png"
-              alt="Primeiro Slide"
-            />
+      <div id="banner_top">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <ol class="carousel-indicators">
+            <li
+              data-target="#carouselExampleIndicators"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                class="d-block w-100"
+                src="assets/img/banners/banner.png"
+                alt="Primeiro Slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="assets/img/banners/banner.png"
+                alt="Segundo Slide"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                class="d-block w-100"
+                src="assets/img/banners/banner.png"
+                alt="Terceiro Slide"
+              />
+            </div>
           </div>
-          <div class="carousel-item">
-            <img
-              class="d-block w-100"
-              src="assets/img/banners/banner.png"
-              alt="Segundo Slide"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              class="d-block w-100"
-              src="assets/img/banners/banner.png"
-              alt="Terceiro Slide"
-            />
-          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleIndicators"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+          </a>
         </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Próximo</span>
-        </a>
       </div>
 
       <!-- START SECTION treinamento  -->
       <section class="treinamento my-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="font-weight-bold">Treinamentos Online</h2>
-          <a href="#" class="text-primary font-weight-bold"
-            >VER MAIS <i class="fas fa-arrow-right"></i
-          ></a>
+          <a href="#" class="text-primary font-weight-bold">
+            VER MAIS <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
 
+        <!-- Tabs -->
         <ul class="nav nav-tabs mb-4" id="tabTreinamentos" role="tablist">
           <li class="nav-item">
             <a
@@ -343,206 +347,171 @@
           </li>
         </ul>
 
+        <!-- Tab Content -->
         <div class="tab-content">
+          <!-- Todos -->
           <div class="tab-pane fade show active" id="todos" role="tabpanel">
-            <div id="carouselTodos" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 1"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível fácil</div>
-                          <h5>Novas unidades</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 2"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível médio</div>
-                          <h5>Como vender mais</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 3"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível avançado</div>
-                          <h5>Gestão estratégica</h5>
-                        </div>
-                      </div>
-                    </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível fácil</div>
+                    <h5>Novas unidades</h5>
                   </div>
                 </div>
-                <!-- Adicione mais .carousel-item conforme necessário -->
               </div>
-              <a
-                class="carousel-control-prev"
-                href="#carouselTodos"
-                role="button"
-                data-slide="prev"
-              >
-                <span class="carousel-control-prev-icon"></span>
-              </a>
-              <a
-                class="carousel-control-next"
-                href="#carouselTodos"
-                role="button"
-                data-slide="next"
-              >
-                <span class="carousel-control-next-icon"></span>
-              </a>
+            </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível médio</div>
+                    <h5>Como vender mais</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível médio</div>
+                    <h5>Como vender mais</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível médio</div>
+                    <h5>Como vender mais</h5>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="tab-pane fade show active" id="facil" role="tabpanel">
-            <div id="carouselFacil" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 1"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível fácil</div>
-                          <h5>Novas unidades</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 2"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível médio</div>
-                          <h5>Como vender mais</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 3"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível avançado</div>
-                          <h5>Gestão estratégica</h5>
-                        </div>
-                      </div>
-                    </div>
+
+          <!-- Fácil -->
+          <div class="tab-pane fade" id="facil" role="tabpanel">
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível Facil</div>
+                    <h5>Como vender mais</h5>
                   </div>
                 </div>
-                <!-- Adicione mais .carousel-item conforme necessário -->
               </div>
-              <a
-                class="carousel-control-prev"
-                href="#carouselTodos"
-                role="button"
-                data-slide="prev"
-              >
-                <span class="carousel-control-prev-icon"></span>
-              </a>
-              <a
-                class="carousel-control-next"
-                href="#carouselTodos"
-                role="button"
-                data-slide="next"
-              >
-                <span class="carousel-control-next-icon"></span>
-              </a>
+            </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível Facil</div>
+                    <h5>Como vender mais</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível Facil</div>
+                    <h5>Como vender mais</h5>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="tab-pane fade show active" id="medio" role="tabpanel">
-            <div id="carouselMedio" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 1"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível fácil</div>
-                          <h5>Novas unidades</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 2"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível médio</div>
-                          <h5>Como vender mais</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 3"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível avançado</div>
-                          <h5>Gestão estratégica</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card card-training">
-                        <img
-                          src="assets/img/treinamento/treinamento.jpg"
-                          alt="Treinamento 3"
-                        />
-                        <div class="card-body">
-                          <div class="nivel">Nível avançado</div>
-                          <h5>Gestão estratégica</h5>
-                        </div>
-                      </div>
-                    </div>
+
+          <!-- Médio -->
+          <div class="tab-pane fade" id="medio" role="tabpanel">
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível médio</div>
+                    <h5>Como vender mais</h5>
                   </div>
                 </div>
-                <!-- Adicione mais .carousel-item conforme necessário -->
               </div>
-              <a
-                class="carousel-control-prev"
-                href="#carouselTodos"
-                role="button"
-                data-slide="prev"
-              >
-                <span class="carousel-control-prev-icon"></span>
-              </a>
-              <a
-                class="carousel-control-next"
-                href="#carouselTodos"
-                role="button"
-                data-slide="next"
-              >
-                <span class="carousel-control-next-icon"></span>
-              </a>
+            </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível médio</div>
+                    <h5>Como vender mais</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível médio</div>
+                    <h5>Como vender mais</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="col-md-6">
+                <div class="card card-training">
+                  <img
+                    src="assets/img/treinamento/treinamento.jpg"
+                    alt="Treinamento 1"
+                  />
+                  <div class="card-body">
+                    <div class="nivel">Nível médio</div>
+                    <h5>Como vender mais</h5>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -554,6 +523,11 @@
     <!-- Scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/slick/js/slick.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
