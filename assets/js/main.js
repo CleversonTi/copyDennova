@@ -164,9 +164,9 @@ $(function () {
     if (data) {
       el.innerHTML = `
         <small>
-          Desenvolvido por <a href="${data.html_url}" target="_blank">@${
-        data.login
-      }</a> • 
+          Desenvolvido por <a href="${data.html_url}" target="_blank">
+          <i class="fab fa-github"></i> 
+          @${data.login}</a> • 
           ${data.public_repos} repositórios públicos • 
           Desde ${new Date(data.created_at).getFullYear()}
         </small>
