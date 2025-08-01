@@ -1,16 +1,44 @@
 $(function () {
+  if ($(window).width() <= 768 && $(".header .header-profile").length) {
+    // Adiciona botão hamburger ao final do .header-profile
+    const $headerProfile = $(".header .header-profile");
+    if ($headerProfile.length) {
+      const $mobileToggle = $(`
+        <div class="mobile-toggle d-md-none">
+          <i class="fas fa-bars fa-2x"></i>
+        </div>
+      `);
+      $headerProfile.append($mobileToggle);
+    }
+    // Adiciona botão close no início de .sidebar dentro do .nav-container
+    const $sidebar = $(".nav-container .sidebar");
+    if ($sidebar.length && $sidebar.find(".close-btn").length === 0) {
+      const $closeBtn = $(`
+        <div class="close-btn d-flex justify-content-end mb-3">
+          <i class="fas fa-times fa-2x"></i>
+        </div>
+      `);
+      $sidebar.prepend($closeBtn);
+    }
+  }
+  // Toggle submenu da sidebar
   $(".sidebar .font-weight-bold").on("click", function () {
     const $clicked = $(this);
-    const $clickedItem = $clicked.closest("li");
-    const $clickedSubCat = $clickedItem.find(".subCat").first();
+    const $item = $clicked.closest("li");
+    const $submenu = $item.find(".subCat").first();
 
-    $(".sidebar .subCat").not($clickedSubCat).removeClass("show");
-    $(".sidebar .font-weight-bold").not($clicked).removeClass("icon-rotated");
-
-    $clickedSubCat.toggleClass("show");
+    $submenu.toggleClass("show");
     $clicked.toggleClass("icon-rotated");
   });
 
+  // Toggle menu mobile
+  $(".mobile-toggle").on("click", function () {
+    $(".nav-container").toggleClass("open");
+  });
+
+  $(".close-btn").on("click", function () {
+    $(".nav-container").removeClass("open");
+  });
   function initSlickIfNeeded($carousel) {
     if (!$carousel.hasClass("slick-initialized")) {
       $carousel.slick({
