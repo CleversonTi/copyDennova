@@ -13,7 +13,22 @@ ol {
   padding: 10px 20px;
   background: #fff;
   border-bottom: 1px solid #ddd;
+  transition: box-shadow 0.3s ease;
 }
+
+.header.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.main-content {
+  padding: 1rem;
+}
+
 .header .header-logo {
   column-gap: 10px;
 }
@@ -182,9 +197,6 @@ ol {
   align-items: center;
 }
 
-.main-content {
-  padding: 1rem;
-}
 .bottom-nav {
   position: fixed;
   bottom: 0;

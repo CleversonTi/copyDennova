@@ -88,3 +88,20 @@ $(function () {
     }, 100); // Aguarda aba ser exibida
   });
 });
+$(window).on("scroll", function () {
+  const $header = $(".header");
+  const $main = $(".main-content");
+
+  if ($(this).scrollTop() > 50) {
+    if (!$header.hasClass("fixed-header")) {
+      $header.addClass("fixed-header");
+
+      // Adiciona margin-top baseado na altura real do header
+      const headerHeight = $header.outerHeight();
+      $main.css("margin-top", headerHeight + "px");
+    }
+  } else {
+    $header.removeClass("fixed-header");
+    $main.css("margin-top", "0");
+  }
+});
